@@ -1,16 +1,8 @@
 package com.github.antonioticelso.application.diodesafiopooII.model;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
-public class ContaPoupanca {
+public class ContaPoupanca extends Conta {
 
-    private int agencia;
-    private int numero;
-    private double saldo;
-
-    public void sacar() {}
-    public void depositar() {}
-    public void transferir() {}
 
 }
