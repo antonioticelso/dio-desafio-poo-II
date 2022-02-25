@@ -11,10 +11,12 @@ public abstract class Conta implements IConta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
+        this.cliente = cliente;
     }
 
     @Override
@@ -34,9 +36,10 @@ public abstract class Conta implements IConta {
     }
 
     protected void imprimirInfoConmuns() {
-        System.out.println(String.format("Agencia: " + this.agencia));
-        System.out.println(String.format("Numero: " + this.numero));
-        System.out.println(String.format("Saldo: %.2f", this.saldo));
+        System.out.println("Titular: " + this.cliente.getNome());
+        System.out.println("Agencia: " + this.agencia);
+        System.out.println("Numero: " + this.numero);
+        System.out.printf("Saldo: %.2f%n", this.saldo);
     }
 
 }
